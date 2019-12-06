@@ -1,0 +1,3 @@
+app:
+  api:
+    baseUrl: http://masglobaltestapi.azurewebsites.net/api/
