@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Hands On Test</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Employees</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="id" class="sr-only">ID</label>
+                        <input type="text" class="form-control" id="id">
+                    </div>
+                    <button type="button" id="search" class="btn btn-primary mb-2">search</button>
+                </form>
+
+                <table id="employeesTable" class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Contract</th>
+                            <th scope="col">Hourly salary</th>
+                            <th scope="col">Monthly salary</th>
+                            <th scope="col">Annual salary</th>
+                            <th scope="col">Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="js/env.js"></script>
+    <script src="js/employee.js"></script>
+</body>
+
+</html>

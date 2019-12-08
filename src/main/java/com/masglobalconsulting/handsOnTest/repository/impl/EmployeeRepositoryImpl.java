@@ -23,9 +23,4 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 .execute()
                 .body();
     }
-
-    @Override
-    public Employee findById(Integer id) throws IOException {
-        return null;
-    }
 }

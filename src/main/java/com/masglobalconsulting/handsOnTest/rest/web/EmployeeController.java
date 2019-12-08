@@ -1,6 +1,7 @@
 package com.masglobalconsulting.handsOnTest.rest.web;
 
 import com.masglobalconsulting.handsOnTest.dto.EmployeeDTO;
+import com.masglobalconsulting.handsOnTest.exceptions.InternalServerException;
 import com.masglobalconsulting.handsOnTest.exceptions.NotFoundException;
 import com.masglobalconsulting.handsOnTest.services.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -18,31 +19,31 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @RestController
-@RequestMapping("/employees")
+@RequestMapping("/api/employees")
 @RequiredArgsConstructor
 public class EmployeeController {
 
     private final EmployeeService employeeService;
 
     @GetMapping
-    public List<EmployeeDTO> getAll() {
+    public List<EmployeeDTO> getAllEmployees() {
         try {
             return employeeService.getAll()
                     .collect(Collectors.toList());
         } catch (IOException e) {
             log.error("Error {}", e.getMessage());
-            return Collections.emptyList();
+            throw new InternalServerException();
         }
     }
 
     @GetMapping("/{id}")
-    public EmployeeDTO employeeDTO(@PathVariable("id") Integer id) {
+    public EmployeeDTO findById(@PathVariable("id") Integer id) {
       try {
           return employeeService.findById(id)
-                  .orElseThrow((() -> new NotFoundException()));
+                  .orElseThrow(NotFoundException::new);
       } catch (IOException e) {
           log.error("Error {}", e.getMessage());
+         throw new InternalServerException();
       }
-      return null;
     }
 }

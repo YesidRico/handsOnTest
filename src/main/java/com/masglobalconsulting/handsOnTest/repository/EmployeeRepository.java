@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface EmployeeRepository {
     List<Employee> getAll() throws IOException;
-    Employee findById(Integer id) throws IOException;
 }

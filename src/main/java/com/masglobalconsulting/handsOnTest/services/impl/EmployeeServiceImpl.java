@@ -25,10 +25,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Optional<EmployeeDTO> findById(Integer id) throws IOException {
-        return employeeRepository.getAll().stream()
+        return employeeRepository.getAll()
+                .stream()
                 .filter(employee -> employee.getId().equals(id))
                 .map(EmployeeMapper::employeesAsEmployeeDTO)
                 .findFirst();
-
     }
 }

@@ -10,7 +10,7 @@ public class EmployeeMapper {
                 .id(employee.getId())
                 .name(employee.getName())
                 .contract(ContractTypeDTOMapper.contractTypeDTOMapper(employee))
-                .rol(RolDTOMapper.rolDTOMapper(employee.getRoleId(), employee.getRoleName(), employee.getRoleName()))
+                .rol(RolDTOMapper.rolDTOMapper(employee.getRoleId(), employee.getRoleName(), employee.getRoleDescription()))
                 .build();
     }
 }
